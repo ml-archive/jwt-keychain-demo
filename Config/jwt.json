@@ -1,4 +1,5 @@
 {
+    "signer": "HS256",
     "secondsToExpire": 3600,
     "signatureKey": "our-little-secret"
 }
