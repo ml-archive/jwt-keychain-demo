@@ -81,5 +81,5 @@ curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJle
 Response
 ```json
 {
-  "success": true
+  "success": true
 }
