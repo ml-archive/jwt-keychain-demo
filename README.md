@@ -1,15 +1,41 @@
 # Basic Template
 
-A basic vapor template for starting a new Vapor web application. If you're using vapor toolbox, you can use: `vapor new --template=basic`
+## APIs
 
-## 📖 Documentation
+### Create user
+CURL
+```
+curl -X POST  -H "Content-Type: application/x-www-form-urlencoded" -d 'name=Casper&email=cr@nodes.dk&password=TestTest123' "http://0.0.0.0:8080/api/v1/users"
+```
+Response
+```json
+{
+  "created_at": "2017-01-12T20:35:38+0100",
+  "deleted_at": null,
+  "email": "cr@nodes.dk",
+  "id": 1,
+  "name": "Casper",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODQyNTM3MzIsInN1YiI6Im51bWJlcigxKSJ9.06X3LOa20U/Ezpo4qdKbFHd5xjqBBtM+Pfkjob+Fyqk=",
+  "updated_at": "2017-01-12T20:35:38+0100"
+}
+```
 
-Visit the Vapor web framework's [documentation](http://docs.vapor.codes) for instructions on how to use this package.
+### Login
+Curl
+```
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'email=cr@nodes.dk&password=TestTest123' "0.0.0.0:8080/api/v1/users/login"
+```
+Response
+```json
+{
+  "created_at": "2017-01-12T20:35:38+0100",
+  "deleted_at": null,
+  "email": "cr@nodes.dk",
+  "id": 1,
+  "name": "Casper",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODQyNTM3MzIsInN1YiI6Im51bWJlcigxKSJ9.06X3LOa20U/Ezpo4qdKbFHd5xjqBBtM+Pfkjob+Fyqk=",
+  "updated_at": "2017-01-12T20:35:38+0100"
+}
+```
 
-## 💧 Community
 
-Join the welcoming community of fellow Vapor developers in [slack](http://vapor.team).
-
-## 🔧 Compatibility
-
-This package has been tested on macOS and Ubuntu.
