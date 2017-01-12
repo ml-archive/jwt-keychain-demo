@@ -1,6 +1,9 @@
 # JWT demo
+Simple demo project of a keychain using JWT
+
 https://github.com/nodes-vapor/jwt-keychain
 
+ - TODO Reset password
 
 ## APIs
 
