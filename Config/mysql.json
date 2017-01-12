@@ -1,0 +1,7 @@
+{
+    "host": "127.0.0.1",
+    "user": "root",
+    "password": "secret",
+    "database": "jwt-keychain-demo",
+    "encoding": "utf8mb4"
+}

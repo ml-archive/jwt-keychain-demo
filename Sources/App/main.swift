@@ -1,13 +1,20 @@
 import Vapor
+import JWTKeychain
+import VaporMySQL
 
 let drop = Droplet()
 
-drop.get { req in
-    return try drop.view.make("welcome", [
-    	"message": drop.localization[req.lang, "welcome", "title"]
-    ])
+try drop.addProvider(VaporMySQL.Provider.self)
+try drop.addProvider(JWTKeychain.Provider.self)
+
+drop.preparations.append(User.self)
+
+drop.group("api") { api in
+    api.group("v1") { api in
+        api.collection(UserRoutes(drop: drop))
+    }
 }
 
-drop.resource("posts", PostController())
+
 
 drop.run()
