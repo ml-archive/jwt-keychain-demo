@@ -3,14 +3,12 @@ Simple demo project of a keychain using JWT
 
 https://github.com/nodes-vapor/jwt-keychain
 
- - TODO Reset password
-
 ## APIs
 
 ### Create user
 CURL
 ```
-curl -X POST -H "Content-Type: multipart/form-data" -F "name=Casper" -F "email=cr@nodes.dk" -F "password=TestTest123" "http://0.0.0.0:8080/api/v1/users"
+curl -X POST -H "Content-Type: multipart/form-data" -F "name=Casper" -F "email=cr@nodes.dk" -F "password=TestTest123" "http://0.0.0.0:8080/api/users"
 ```
 Response
 ```json
@@ -28,7 +26,7 @@ Response
 ### Login
 CURL
 ```
-curl -X POST -H "Content-Type: multipart/form-data" -F "email=cr@nodes.dk" -F "password=TestTest123" "0.0.0.0:8080/api/v1/users/login"
+curl -X POST -H "Content-Type: multipart/form-data" -F "email=cr@nodes.dk" -F "password=TestTest123" "0.0.0.0:8080/api/users/login"
 ```
 Response
 ```json
@@ -46,7 +44,7 @@ Response
 ### ME
 CURL
 ```swift
-curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODQyNTUwNDMsInN1YiI6Im51bWJlcigxKSJ9.KPCnzpGInmuOoByGoIJ/mfiAmnQjgpVYQLmZo6DYjI4=" "http://0.0.0.0:8080/api/v1/users/me"
+curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODQyNTUwNDMsInN1YiI6Im51bWJlcigxKSJ9.KPCnzpGInmuOoByGoIJ/mfiAmnQjgpVYQLmZo6DYjI4=" "http://0.0.0.0:8080/api/users/me"
 ```
 
 Response
@@ -65,7 +63,7 @@ Response
 ### Regenerate token
 CURL
 ```
-curl -X PATCH -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODQyNTUxNTQsInN1YiI6Im51bWJlcigxKSJ9./62Xg5sZvVIbM12wvzhmjins35x9+kZqyvDWlKk/j1c=" -H "Content-Type: multipart/form-data" -F "email=cr@nodes.dk" -F "password=TestTest123" "http://0.0.0.0:8080/api/v1/users/token/regenerate"
+curl -X PATCH -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODQyNTUxNTQsInN1YiI6Im51bWJlcigxKSJ9./62Xg5sZvVIbM12wvzhmjins35x9+kZqyvDWlKk/j1c=" -H "Content-Type: multipart/form-data" -F "email=cr@nodes.dk" -F "password=TestTest123" "http://0.0.0.0:8080/api/users/token/regenerate"
 ```
 
 Response
