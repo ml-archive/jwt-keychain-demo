@@ -1,19 +1,23 @@
 import Vapor
 import JWTKeychain
 import VaporMySQL
+import VaporForms
+import JWTKeychain
 
 let drop = Droplet()
 
 try drop.addProvider(VaporMySQL.Provider.self)
-try drop.addProvider(JWTKeychain.Provider.self)
-
+try drop.addProvider(VaporForms.Provider.self)
 drop.preparations.append(User.self)
 
-drop.group("api") { api in
-    api.group("v1") { api in
-        api.collection(UserRoutes(drop: drop))
-    }
-}
+let configuration = try JWTKeychain.Configuration(drop: drop)
+
+drop.collection(
+    try ApiUserRoutes<User>(
+        drop: drop,
+        mailer: Mailer(configuration: configuration, drop: drop)
+    )
+)
 
 
 

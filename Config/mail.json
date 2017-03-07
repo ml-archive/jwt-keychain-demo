@@ -1,0 +1,8 @@
+{
+    "smtpHost": "TODO",
+    "smtpPort": "TODO",
+    "user": "TODO",
+    "password": "TODO",
+    "fromEmail": "TODO@todo.com",
+    "fromName": "TODO"
+}
