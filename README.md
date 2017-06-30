@@ -94,6 +94,7 @@ Response
 {
   "success": true
 }
+```
 
 
 ## 🏆 Credits
